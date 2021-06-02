@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+{block:IndexPage}
+<meta name="keywords" content="{text:Tags Blog}" />{/block:IndexPage}
+{block:PermalinkPage}
+<meta name="keywords" content="{block:Posts}{block:HasTags}{block:Tags}{Tag},
+{/block:Tags}{/block:HasTags}{/block:Posts}" />
+{/block:PermalinkPage}
+{block:IndexPage}<title>{Title}</title>{/block:IndexPage}
+{block:PermalinkPage}<title>{block:PostSummary}{PostSummary}{/block:PostSummary} | {Title}</title>
+{/block:PermalinkPage}
+<link rel="shortcut icon" href="{image:Logo}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:IndexPage}
+<meta name="Description" content="{Description}" />
+{/block:IndexPage}
+{block:PermalinkPage}
+<meta name="Description" content="{block:PostSummary}{PostSummary}{/block:PostSummary}" />
+{/block:PermalinkPage}
+<!-- Informações do Blog -->
+<meta name="image:Logo" content="https://static.tumblr.com/7vwxtth/F1Kqlydut/logo.png"/>
+<meta name="font:Titulo Blog" content="Cinzel Decorative"/>
+<meta name="font:Titulo Post" content="Cinzel, Helvetica, sans-serif"/>
+<meta name="font:Corpo Post" content="Merriweather"/>
+<meta name="text:Descricao Blog" content="Nulla consectetur nisi id turpis rutrum consectetur. Nulla condimentum interdum libero, ac vestibulum quam tempus fringilla. Donec egestas fringilla libero, ut tincidunt ex feugiat vitae."/>
+<!-- Elementos -->
+<meta name="if:Navbar Horizontal" content="1"/>
+<meta name="if:Navbar Vertical" content="0"/>
+<meta name="if:Anuncio Podcast" content="1"/>
+<meta name="if:Caixa de Busca" content="1"/>
+<meta name="if:Posts Relacionados" content="1"/>
+<!-- Cores -->
+<meta name="color:Cor dos Titulos" content="#292b2c"/>
+<meta name="color:Cor dos Titulos Hover" content="rgba(0,0,0,.6)"/>
+<meta name="color:Cor do Texto" content="rgba(0,0,0,.8)"/>
+<meta name="color:Cor do Texto de Cartoes" content="rgba(0,0,0,.44)"/>
+<meta name="color:Cor de Detalhes" content="rgba(0,0,0,.44)"/>
+<meta name="color:Cor de Bordas" content="rgba(0,0,0,.125)"/>
+<meta name="color:Cor do Menu" content="rgba(255,255,255,.97)"/>
+<meta name="color:Cor do Link do Menu" content="rgba(0,0,0,.5)"/>
+<meta name="color:Cor do Link do Menu Hover" content="rgba(0,0,0,.7)"/>
+<meta name="color:Cor do Link" content="#202340"/>
+<meta name="color:Cor do Link Hover" content="#202340"/>
+<meta name="color:Fundo Contraste" content="#fafafa"/>
+<meta name="color:Fundo Cartao" content="#ffffff"/>
+<meta name="image:Fundo Contraste" content=""/>
+<!-- Anuncio Podcast -->
+<meta name="image:Capa Podcast" content="Imagem Aqui"/>
+<meta name="text:Link Podcast" content="Link aqui"/>
+<meta name="text:Texto Podcast" content="Texto aqui"/>
+<meta name="text:Descricao Podcast" content="Texto aqui"/>
+<!-- Tags do Blog -->
+<meta name="text:Tags Blog" content="cinema, design, fotografia, arte"/>
+<!-- Logo Footer -->
+<meta name="image:Logo Footer" content=""/>
+<!-- Opções -->
+<meta name="select:Navbar" content="fixed-top" title="Fixa no Topo">
+<meta name="select:Navbar" content="fixed-bottom" title="Fixa no Rodape">
+<meta name="select:Navbar" content="estatica" title="Estatica">
+<meta name="select:Forma do Avatar" content="thumb-quadrada" title="Quadrado">
+<meta name="select:Forma do Avatar" content="thumb-redonda" title="Redonda">
+<meta name="select:Feed" content="" title="Linha do Tempo">
+<meta name="select:Feed" content="card-columns" title="Mosaico">
+<meta name="select:Header" content="cabecalho" title="Com Imagem">
+<meta name="select:Header" content="" title="Sem Imagem">
+<!-- Links -->
+<meta name="text:Link 1" content="Pergunte!"/>
+<meta name="text:Link 1 URL" content="/ask"/>
+<meta name="text:Link 2" content="Feed"/>
+<meta name="text:Link 2 URL" content="/rss"/>
+<meta name="text:Link 3" content="Enviar Post"/>
+<meta name="text:Link 3 URL" content="/submit"/>
+<meta name="text:Link 4" content="Arquivo"/>
+<meta name="text:Link 4 URL" content="/archive"/>
+<meta name="text:Link 5" content="Quem sou eu"/>
+<meta name="text:Link 5 URL" content="/sobre"/>
+<meta name="text:Link 6" content="Tema"/>
+<meta name="text:Link 6 URL" content="https://leibowitz.tumblr.com/"/>
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<!-- Fonts -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700" rel="stylesheet"> 
+<!-- Custom styles for this template -->
+<style type="text/css">
+/*
+Template Name:Mediumish
+Copyright:WowThemes.net,https://www.wowthemes.net
+Version:1.0.1
+License: https://www.wowthemes.net/freebies-license/
+*/
+body {
+	padding-top:55px;
+	background: {BackgroundColor};
+	color: {color:Cor do Texto};
+}
+.recuo{
+	height: 20px;
+}
+.mainheading {
+	padding:1rem 0rem;
+}
+a {
+	color:{color:Cor do Link};
+}
+a:hover{
+	color: {color:Cor do Link Hover};
+}
+a,a:hover {
+	transition:all 0.2s;
+}
+.bg-white {
+    background-color: {color:Cor do Menu} !important;
+}
+.bg-light{
+	background-color: {color:Fundo Contraste};
+}
+.btn-light{
+	color: {color:Cor do Texto};
+	background-color: {color:Fundo Contraste};
+	border-color: {color:Cor de Bordas};
+}
+.btn-light:hover{
+	background-color: {AccentColor};
+}
+section {
+	margin-bottom:20px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+	color: {color:Cor dos Titulos};
+}
+.section-title h2 {
+	border-bottom:1px solid {color:Cor de Bordas};
+	margin-bottom:25px;
+	font-weight:700;
+	font-size:1.4rem;
+	margin-bottom:27px;
+}
+.section-title span {
+	border-bottom:1px solid {color:Cor de Detalhes};
+	display:inline-block;
+	padding-bottom:20px;
+	margin-bottom:-1px;
+}
+@media (min-width:576px) {
+	.card-columns.listfeaturedtag {
+		-webkit-column-count:2;
+		-moz-column-count:2;
+		column-count:2;
+	}
+}
+.card-columns .card {
+	margin-bottom:20px;
+}
+.card{
+	background-color: {color:Fundo Cartao} !important;
+	border: 1px solid {color:Cor de Bordas};
+}
+.listfeaturedtag .wrapthumbnail {
+	height:258px;
+	flex:0 0 auto;
+}
+.listfeaturedtag .card {
+	border:1px solid {color:Cor de Bordas};
+	border-radius:2px;
+	height:260px;
+	padding-left:0;
+	margin-bottom:15px;
+}
+.listfeaturedtag .thumbnail {
+	background-size:cover;
+	height:100%;
+	display:block;
+	background-position:38% 22% !important;
+	background-origin:border-box!important;
+	border-top-left-radius:2px;
+}
+.listfeaturedtag .card-block {
+	padding-left:0;
+}
+.listfeaturedtag h2.card-title,.listrecent h2.card-title {
+	font-size:1.3rem;
+	font-weight:700;
+	line-height: 1.25;
+}
+.listfeaturedtag h2.card-title a,.listrecent h2.card-title a {
+	color:{color:Cor dos Titulos};
+}
+.listfeaturedtag h2.card-title a:hover,.listrecent h2.card-title a:hover {
+	color:{color:Cor dos Titulos Hover};
+	text-decoration:none;
+}
+.listfeaturedtag h4.card-text,.listrecent h4.card-text {
+	color:{color:Cor do Texto de Cartoes};
+	font-size:0.95rem;
+	line-height:1.4;
+	font-weight:400;
+}
+.card-text img{
+	width: 100%;
+	border-radius: 4px;
+}
+.listfeaturedtag .wrapfooter {
+	position:absolute;
+	bottom:20px;
+	font-size:12px;
+	display:block;
+	width:85%;
+}
+.listrecent .wrapfooter {
+	font-size:12px;
+	margin-top:30px;
+}
+* {
+  box-sizing: border-box;
+}
+.nav-header .logo {
+  width: 23%;
+}
+.nav-header nav {
+  width: 75%;
+}
+.nav-header {
+   background: {color:Cor do Menu};
+    height: 55px;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+    padding: .4rem 1rem;
+}
+.estatica{
+	position: relative;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+}
+.logo {
+  text-align: center;
+  padding-top: 0px;
+}
+.logo img {
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.item {
+  padding: 10px;
+}
+header,
+nav {
+  font-size: 0;
+}
+.item a{
+  text-decoration: none;
+  color: {color:Cor do Link do Menu};
+  font-size: 14px;
+}
+.item a:hover{
+  color: {color:Cor do Link do Menu Hover};
+}
+.item.item-busca{
+  padding: 0;
+  width: 45%;
+}
+/* Vertical Nav */
+.vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+.img-thumbnail{
+	background-color: {color:Cor do Menu};
+	border: 1px solid {color:Cor de Bordas};
+}
+a.text-dark, a.text-dark{
+	color: {color:Cor do Link do Menu};
+}
+a.text-dark:focus, a.text-dark:hover{
+	color: {color:Cor do Link do Menu Hover};
+}
+a.bg-light, a.bg-light, button.bg-light, button.bg-light{
+	background-color: {color:Cor do Menu};
+}
+a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover{
+	background-color: {color:Fundo Contraste};
+}
+.container.container-vertical {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+.fixed-top.top-vertical{
+	width: calc(auto - 17rem);
+	margin-left: 18rem;
+	margin-top: 20px;
+	transition: all 0.4s;
+}
+{block:IfNavbarVertical}
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+#botao-navbar.fixed-top.top-vertical.active{
+	margin-left: 1rem;
+}
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+  #botao-navbar.fixed-top.top-vertical{
+  	margin-left: 1rem;
+  }
+  #botao-navbar.fixed-top.top-vertical.active{
+  	margin-left: 18rem;
+  }
+}
+{/block:IfNavbarVertical}
+/* Busca */
+.logo,
+.item,
+.middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+.scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 1140px){
+	.item.item-busca{
+	  width: 35%;
+	}
+}
+@media (max-width: 765px) {
+  .item {
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px){
+	.item.item-busca{
+	  width: 60%;
+	}
+}
+.navbar-pod{
+	background: {AccentColor};
+	width: 100%;
+	box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+	padding: 10px;
+	text-align: center;
+}
+.center-pod{
+	margin: 0 auto;
+	width: 500px;
+}
+.center-pod img{
+	width: 70px;
+	height: 70px;
+	border-radius: 4px;
+	vertical-align: top;
+}
+.text-pod{
+	display:inline-block;
+	text-align: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.text-pod h2{
+	color: #fff;
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+.text-pod p{
+	color: #fff;
+	margin-bottom: 0;
+}
+@media (max-width:710px){
+	.center-pod{
+		width: 350px;
+	}
+}
+@media (max-width:350px){
+	.center-pod{
+		width: 100%;
+	}
+	.center-pod img{
+		width: 40px;
+		height: 40px;
+	}
+	.text-pod{
+		margin-left: 5px;
+		margin-top: 0;
+	}
+}
+.chat{
+	list-style: none;
+}
+.card-chat ul{
+	list-style: none;
+	padding-left: 0px;
+}
+.card-chat li{
+	list-style: none;
+	background: {AccentColor};
+}
+.balao-chat{
+	padding: 10px;
+	border-radius: 4px;
+	margin: 15px;
+	font-size: 14px;
+	border: 1px solid {color:Cor de Bordas};
+	color: #ffff;
+	font-style: italic;
+}
+.label{
+	font-weight: bold;
+}
+.reblogado{
+	background: {color:Fundo Cartão};
+	padding: 10px;
+	color: {color:Cor de Detalhes};
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.reblogado p{
+	margin-bottom: 0;
+}
+.author-thumb {
+	width:40px;
+	height:40px;
+	float:left;
+	margin-right:13px;
+}
+.author-thumb.thumb-quadrada{
+	border-radius: 4px;
+}
+.rounded-circle.thumb-quadrada{
+	border-radius: 4px !important;
+}
+.author-thumb.thumb-redonda{
+	border-radius:100%;
+}
+.post-top-meta {
+	margin-bottom:2rem;
+}
+.post-top-meta .author-thumb {
+	width:72px;
+	height:72px;
+}
+.post-top-meta.authorpage .author-thumb {
+	margin-top:40px;
+}
+.post-top-meta span {
+	font-size:0.9rem;
+	color:{color:Cor de Detalhes};
+	display:inline-block;
+}
+.post-top-meta .author-description {
+	margin-bottom:5px;
+	margin-top:5px;
+	font-size:14px;
+}
+.author-meta {
+	flex:1 1 auto;
+	white-space:nowrap!important;
+	text-overflow:ellipsis!important;
+	overflow:hidden!important;
+}
+@media (max-width:1024px) {
+	.post-top-meta{
+		background: {color:Fundo Contraste};
+		padding: 10px;
+		border-radius: 4px;
+	}
+	.col-md-2{
+		max-width: 20%;
+	}
+	.col-md-10 {
+		max-width: 70%;
+	}
+	.post-top-meta .author-thumb{
+		width: 100%;
+		height: auto;
+	}
+	.post-top-meta .author-description{
+		font-size: 12px;
+	}
+}
+@media (max-width:800px) {
+	.col-md-2{
+		max-width: 25%;
+	}
+}
+@media (max-width:800px) {
+	.col-md-2{
+		max-width: 25%;
+	}
+}
+@media (max-width:400px) {
+	.col-md-2{
+		max-width: 30%;
+	}
+}
+span.post-name,span.post-date,span.author-meta {
+	display:inline-block;
+}
+span.post-date,span.post-read {
+	color:{color:Cor de Detalhes};
+}
+span.post-read-more {
+	align-items:center;
+	display:inline-block;
+	float:right;
+	margin-top:8px;
+}
+span.post-read-more a {
+	color:{color:Cor de Detalhes};
+}
+span.post-name a,span.post-read-more a:hover {
+	color:{color:Cor dos Titulos};
+}
+.dot:after {
+	content:"·";
+	margin-left:3px;
+	margin-right:3px;
+}
+.mediumnavigation .form-control {
+	font-size:0.8rem;
+	border-radius:30px;
+	overflow:hidden;
+	background-color: {color:Fundo Contraste};
+	color: {color:Cor do Texto};
+	fill: {color:Cor dos Titulos};
+	border:1px solid {color:Cor de Bordas};
+}
+.search-icon svg{
+	fill: {color:Cor dos Titulos};
+}
+.mediumnavigation .form-inline {
+	margin-left:15px;
+	float: right;
+}
+.mediumnavigation .form-inline .btn {
+	margin-left:-50px;
+	border:0;
+	border-radius:30px;
+	cursor:pointer;
+}
+.mediumnavigation .form-inline .btn:hover,.mediumnavigation .form-inline .btn:active {
+	background:transparent;
+	color:green;
+}
+.mediumnavigation .navbar-brand {
+	font-weight:500;
+}
+.navbar-brand{
+	padding-top: 6px !important;
+}
+@media (max-width:960px){
+	.navbar-brand{
+		padding-top: 0px !important;
+	}
+}
+.mediumnavigation .search-icon {
+	margin-left:-40px;
+	display:inline-block;
+	margin-top:3px;
+	cursor:pointer;
+}
+.mainheading h1.sitetitle {
+	font-family:{font:Titulo Blog};
+}
+.mainheading h1.posttitle {
+	font-family: {font:Titulo Post};
+	font-weight:700;
+	margin-bottom:1rem;
+}
+.mainheading.cabecalho{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	border-radius: 4px;
+	padding: 20px;
+	color: #fff;
+	text-shadow: 0 1px 3px rgba(0,0,0,.8);
+	background-image: linear-gradient(to bottom, transparent 0%, {AccentColor} 75%), url({HeaderImage});
+	background-repeat: repeat-y;
+	background-size: cover;
+	background-position: center;
+	background-color: {AccentColor};
+}
+.mainheading.cabecalho h1.sitetitle{
+	color: #fff;
+}
+.page-footer{
+	background: {color:Fundo Contraste};
+}
+.selo-footer{
+	padding: 10px;
+	text-align: center;
+}
+.selo-footer img{
+	width: 150px;
+}
+.copyright-footer{
+	margin-top: 71px;
+}
+.footer-copyright{
+	border-top:1px solid {color:Cor de Bordas}!important;
+	font-size:0.8rem;
+	color:{color:Cor de Detalhes};
+}
+.link-dark {
+	color:{color:Cor dos Titulos};
+}
+.article-post {
+	font-family:{font:Corpo Post};
+	font-size:1.2rem;
+	line-height:1.8;
+	color:{color:Cor do Texto};
+}
+.article-post img {
+    width: 100%;
+    height: auto;
+}
+.cine-mod{
+	border-radius: 4px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+.cine-mod iframe{
+	width: 100%;
+}
+figure{
+	position: relative;
+}
+.tmblr-full .tmblr-attribution a{
+	position: absolute;
+	z-index: 100;
+	right: 0;
+	bottom: 0;
+	background: rgb(0,0,0, 0.8);
+	border-top-left-radius: 4px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10px;
+	padding: 5px;
+	text-transform: uppercase;
+}
+.article-post iframe {
+    width: 100%;
+}
+blockquote {
+	border-left:4px solid {AccentColor};
+	padding:0 20px;
+	font-style:italic;
+	color:{color:Cor do Texto de Cartoes};
+}
+.article-post p,.article-post blockquote {
+	margin:0 0 1.5rem 0;
+}
+.read_more{
+	border-color: {AccentColor};
+	color: {AccentColor};
+	padding: 3px 10px;
+	text-align: center;
+	border-radius: 999em;
+	font-size: 0.85rem;
+	font-weight: 400;
+	line-height: 1.25;
+	display: inline-block;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+}
+.title-quote{
+	color: #fff;
+	text-align: center;
+	font-family: Merriweather;
+	font-style: italic;
+	background: {AccentColor};
+	padding: 25px;
+}
+.quote-page{
+	padding: 40px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+.title-quote a{
+	color: #fff;
+	text-decoration: none;
+}
+.title-quote h2{
+	font-size: 25px;
+}
+.text-source{
+	border-top: 2px solid #fff;
+	color: #fff;
+	font-size: 14px;
+	padding-top: 10px;
+}
+.featured-image {
+	display:block;
+	margin:0px auto;
+	margin-bottom:1.5rem;
+}
+.share {
+	text-align:center;
+	margin-top:20px;
+}
+.share p {
+	margin-bottom:10px;
+	font-size:0.95rem;
+}
+.share {
+	display:none !important;
+}
+.share ul li {
+	display:inline-block;
+	margin-bottom:5px;
+}
+.share ul {
+	padding-left:0;
+	margin-left:0;
+}
+.reblogar{
+	padding: 25px;
+	padding-top: 0px;
+}
+.svgIcon {
+	vertical-align:middle;
+}
+@media (min-width:1024px) {
+	.share {
+		position:fixed;
+		display:block !important;
+	}
+	.share ul li {
+		display:block;
+	}
+}
+@media (max-width:999px) {
+	.listfeaturedtag .wrapthumbnail, .listfeaturedtag .col-md-7 {
+		width:100%;
+		max-width:100%;
+		-webkit-box-flex: 0;
+		-webkit-flex: 100%;
+		-ms-flex: 100%;
+		flex: 100%;
+	}
+	.listfeaturedtag .wrapthumbnail {
+		height:250px;
+	}
+	.listfeaturedtag .card {
+		height:auto;
+	}
+	.listfeaturedtag .wrapfooter {
+		position:relative;
+		margin-top:30px;
+	}
+	.listfeaturedtag .card-block {
+		padding:20px;
+	}
+}
+.share,.share a {
+	color:{color:Cor de Detalhes};
+	fill:{color:Cor de Detalhes};
+}
+.graybg {
+	background:{image:Fundo Contraste};
+	background-color:{color:Fundo Contraste};
+	padding:40px 0 46px;
+	position:relative;
+}
+.listrelated .card {
+	box-shadow:0 1px 7px rgba(0,0,0,.05);
+	border:0;
+}
+.card {
+	border-radius:4px;
+}
+.card .img-thumb {
+	border-top-right-radius:4px;
+	border-top-left-radius:4px;
+}
+.card-video iframe{
+	width: 100%;
+}
+.card-time-line {
+	width:500px;
+	margin:0px auto;
+	margin-bottom:1.5rem;
+	max-width:100%;
+}
+ul.tags {
+	list-style:none;
+	padding-left:0;
+	margin:0 0 3rem 0;
+}
+ul.tags li {
+	display:inline-block;
+	font-size:0.9rem;
+	margin-bottom: 10px;
+	margin-right: 5px;
+}
+ul.tags li a {
+	background:{color:Fundo Contraste};
+	color:{color:Cor dos Titulos};
+	border-radius:3px;
+	padding:5px 10px;
+}
+ul.tags li a:hover {
+	color:{color:Cor dos Titulos Hover};
+	text-decoration:none;
+}
+ol.notes {
+                padding: 0px;
+                margin: 25px 0px;
+                list-style-type: none;
+                border-bottom: solid 1px #ccc;
+            }
+
+            ol.notes li.note {
+                border-top: solid 1px #ccc;
+                padding: 10px;
+            }
+
+            ol.notes li.note img.avatar {
+                vertical-align: -4px;
+                margin-right: 10px;
+                width: 16px;
+                height: 16px;
+            }
+
+            ol.notes li.note span.action {
+                font-weight: bold;
+            }
+
+            ol.notes li.note .answer_content {
+                font-weight: normal;
+            }
+
+            ol.notes li.note blockquote {
+                border-color: #eee;
+                padding: 4px 10px;
+                margin: 10px 0px 0px 25px;
+            }
+
+            ol.notes li.note blockquote a {
+                text-decoration: none;
+            }
+.margtop3rem {
+	margin-top: 3rem;
+}
+.sep {
+	height:1px;
+	width:20px;
+	background:#999;
+	margin:0px auto;
+	margin-bottom:1.2rem;
+}
+.btn.follow {
+	border-color:{AccentColor};
+	color:{AccentColor};
+	padding:3px 10px;
+	text-align:center;
+	border-radius:999em;
+	font-size:0.85rem;
+	display:inline-block;
+}
+.btn.subscribe {
+	background-color:{AccentColor};
+	border-color:{AccentColor};
+	color:rgba(255,255,255,1);
+	fill:rgba(255,255,255,1);
+	border-radius:30px;
+	font-size:0.85rem;
+	margin-left:10px;
+	font-weight:600;
+	text-transform:uppercase;
+}
+.btn.paginacao-btn{
+	background-color:{AccentColor};
+	border-color:{AccentColor};
+	color:rgba(255,255,255,1);
+	fill:rgba(255,255,255,1);
+	border-radius:30px;
+	font-size:0.85rem;
+	margin-left:10px;
+	font-weight:600;
+	text-transform:uppercase;
+}
+.paginacao{
+	text-align: center;
+}
+.post-top-meta .btn.follow {
+	margin-left:5px;
+	margin-top:-4px;
+}
+.card.related-card{
+	margin-bottom: 35px;
+}
+.alertbar {
+	box-shadow:0 -3px 10px 0 rgba(0,0,0,.0785);
+	position:fixed;
+	bottom:0;
+	left:0;
+	background-color:#fff;
+	width:100%;
+	padding:14px 0;
+	z-index:1;
+}
+.form-control::-webkit-input-placeholder {
+	color: {color:Cor do Texto};
+	fill: {color:Cor dos Titulos};
+}
+.form-control:-moz-placeholder {
+	color: {color:Cor do Texto};
+	fill: {color:Cor dos Titulos};
+}
+.form-control::-moz-placeholder {
+	color: {color:Cor do Texto};
+	fill: {color:Cor dos Titulos};
+}
+.form-control:-ms-input-placeholder {
+	color: {color:Cor do Texto};
+	fill: {color:Cor dos Titulos};
+}
+.form-control::-ms-input-placeholder {
+	color: {color:Cor do Texto};
+	fill: {color:Cor dos Titulos};
+}
+.authorpage h1 {
+	font-weight:700;
+	font-size:30px;
+}
+.post-top-meta.authorpage .author-thumb {
+	float:none;
+}
+.authorpage .author-description {
+	font-size:1rem;
+	color:rgba(0,0,0,.6);
+}
+.post-top-meta.authorpage .btn.follow {
+	padding:7px 20px;
+	margin-top:10px;
+	margin-left:0;
+	font-size:0.9rem;
+}
+.graybg.authorpage {
+	border-top:1px solid #f0f0f0;
+}
+.authorpostbox {
+	width:760px;
+	margin:0px auto;
+	margin-bottom:1.5rem;
+	max-width:100%;
+}
+.authorpostbox .img-thumb {
+	width:100%;
+}
+.sociallinks {
+	margin:1rem 0;
+}
+.sociallinks a {
+	background:#666;
+	color:#fff;
+	width:22px;
+	height:22px;
+	display:inline-block;
+	text-align:center;
+	line-height:22px;
+	border-radius:50%;
+	font-size:12px;
+}
+/* Custom CSS */
+            {CustomCSS}
+</style>
+</head>
+<body>
+
+<!-- Begin Nav
+================================================== -->
+<!-- Horizontal navbar -->
+{block:IfNavbarHorizontal}
+<header class="nav-header {select:Navbar}">
+    <span class="logo"><a class="navbar-brand" href="{BlogURL}">
+  <img src="{image:Logo}" alt="logo">
+  </a></span>
+    <nav class="middle scroll">
+      <span class="item"><a href="{text:Link 1 URL}">{text:Link 1}</a></span>
+      <span class="item"><a href="{text:Link 2 URL}">{text:Link 2}</a></span>
+      <span class="item"><a href="{text:Link 3 URL}">{text:Link 3}</a></span>
+      <span class="item"><a href="{text:Link 4 URL}">{text:Link 4}</a></span>
+      <span class="item"><a href="{text:Link 5 URL}">{text:Link 5}</a></span>
+      <span class="item"><a href="{text:Link 6 URL}">{text:Link 6}</a></span>
+      {block:IfCaixadeBusca}
+      <span class="item item-busca mediumnavigation">
+      	<!-- Begin Search -->
+		<form action="/search" class="form-inline">
+			<input class="form-control mr-sm-2" type="text" name="q" value="{SearchQuery}" id="sf" placeholder="Buscar...">
+			<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+		</form>
+		<!-- End Search -->
+		</span>
+		{/block:IfCaixadeBusca}
+    </nav>
+  </header>
+{/block:IfNavbarHorizontal}
+<!-- End Horizontal navbar -->
+
+<!-- Vertical navbar -->
+{block:IfNavbarVertical}
+<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center"><a href="{BlogURL}"><img src="{image:Logo}" alt="..." width="65" class="mr-3 rounded-circle {select:Forma do Avatar} img-thumbnail shadow-sm"></a>
+      <div class="media-body">
+        <h4 class="m-0">{Title}</h4>
+        <p class="font-weight-light text-muted mb-0">{AuthorName}</p>
+      </div>
+    </div>
+  </div>
+
+  {block:IfCaixadeBusca}
+  <div class="px-3 mediumnavigation">
+  <form action="/search">
+			<input class="form-control mr-sm-2" type="text" name="q" value="{SearchQuery}" id="sf" placeholder="Buscar...">
+			<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+	</form>
+	</div>
+	{/block:IfCaixadeBusca}
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="{text:Link 1 URL}" class="nav-link text-dark font-italic bg-light">
+                {text:Link 1}
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="{text:Link 2 URL}" class="nav-link text-dark font-italic bg-light">
+                {text:Link 2}
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="{text:Link 3 URL}" class="nav-link text-dark font-italic bg-light">
+                {text:Link 3}
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="{text:Link 4 URL}" class="nav-link text-dark font-italic bg-light">
+                {text:Link 4}
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="{text:Link 5 URL}" class="nav-link text-dark font-italic bg-light">
+                {text:Link 5}
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="{text:Link 6 URL}" class="nav-link text-dark font-italic bg-light">
+                {text:Link 6}
+            </a>
+    </li>
+  </ul>
+</div>
+{/block:IfNavbarVertical}
+<!-- End vertical navbar -->
+<!-- End Nav
+================================================== -->
+{block:IndexPage}
+<!-- Anuncio
+================================================== -->
+{block:IfAnuncioPodcast}
+<div class="navbar-pod">
+	<div class="center-pod">
+		<a class="link-pod" href="{text:Link Podcast}">
+			<img src="{image:Capa Podcast}" alt="Podcast">
+			<div class="text-pod">
+			<h2>{text:Texto Podcast}</h2>
+			<p>{text:Descricao Podcast}</p>
+			</div>
+		</a>
+	</div>
+</div>
+{/block:IfAnuncioPodcast}
+<!-- Begin Site Title
+================================================== -->
+<div class="container {block:IfNavbarVertical}container-vertical{/block:IfNavbarVertical}" id="content">
+	<!-- Toggle button -->
+	{block:IfNavbarVertical}
+	<div id="botao-navbar" class="fixed-top top-vertical">
+  <button id="sidebarCollapse" type="button" class="btn btn-light"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
+  </div>
+  {/block:IfNavbarVertical}
+	<div class="mainheading {select:Header}">
+		<h1 class="sitetitle">{Title}</h1>
+		<p class="lead">
+			 {text:Descricao Blog}
+		</p>
+	</div>
+<!-- End Site Title
+================================================== -->
+	<!-- Begin List Posts
+	================================================== -->
+	<section class="recent-posts">
+	<div class="section-title">
+		<h2><span>Posts{block:TagPage} sobre {Tag}{/block:TagPage}</span></h2>
+	</div>
+	<div class="{select:Feed} listrecent">
+		{block:Posts}
+		<!-- begin post -->
+		{block:Text}
+	<div class="card-time-line">
+		<div class="card">
+			{block:RebloggedFrom} 
+			<div class="reblogado">
+			<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3.75 17L8 12.75V16h10v-4.5l2-2V16a2 2 0 0 1-2 2H8v3.25L3.75 17m16.5-10L16 11.25V8H6v4.5l-2 2V8a2 2 0 0 1 2-2h10V2.75L20.25 7z" fill="#626262"/></svg> Post reblogado de <a href="{ReblogParentURL}">{ReblogParentName}</a></p>
+			</div>
+			{block:RebloggedFrom} 
+			<div class="card-block">
+				{block:Title}
+				<h2 class="card-title"><a href="{Permalink}">{Title}</a></h2>
+				{/block:Title}
+				<h4 class="card-text">{Body}</h4>
+				<div class="metafooter">
+					<div class="wrapfooter">
+						<span class="meta-footer-thumb">
+						<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+						</span>
+						<span class="author-meta">
+						<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+						<span class="post-date">{DayOfMonth} de {Month} de {Year}</span><span class="dot"></span>
+						</span>
+						<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		{/block:Text}
+		<!-- end post -->
+		<!-- begin post -->
+		{block:Answer}
+	<div class="card-time-line">
+		<div class="card">
+			{block:RebloggedFrom} 
+			<div class="reblogado">
+			<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3.75 17L8 12.75V16h10v-4.5l2-2V16a2 2 0 0 1-2 2H8v3.25L3.75 17m16.5-10L16 11.25V8H6v4.5l-2 2V8a2 2 0 0 1 2-2h10V2.75L20.25 7z" fill="#626262"/></svg> Post reblogado de <a href="{ReblogParentURL}">{ReblogParentName}</a></p>
+			</div>
+			{block:RebloggedFrom} 
+			<li class="chat">
+                        <div class="card-chat">
+                        <ul>
+                                <li class="balao-chat {Alt} user_{UserNumber}">
+                                        <span class="label">{Asker}</span>{Question}
+                                </li>
+                        </ul>
+                        </div>
+                    </li>
+			<div class="card-block">
+				<h4 class="card-text">{Answer}</h4>
+				<div class="metafooter">
+					<div class="wrapfooter">
+						<span class="meta-footer-thumb">
+						<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+						</span>
+						<span class="author-meta">
+						<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+						<span class="post-date">{DayOfMonth} de {Month} de {Year}</span><span class="dot"></span>
+						</span>
+						<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		{/block:Answer}
+		<!-- end post -->
+		{block:Quote}
+	<div class="card-time-line">
+		<div class="card">
+			{block:RebloggedFrom} 
+			<div class="reblogado">
+			<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3.75 17L8 12.75V16h10v-4.5l2-2V16a2 2 0 0 1-2 2H8v3.25L3.75 17m16.5-10L16 11.25V8H6v4.5l-2 2V8a2 2 0 0 1 2-2h10V2.75L20.25 7z" fill="#626262"/></svg> Post reblogado de <a href="{ReblogParentURL}">{ReblogParentName}</a></p>
+			</div>
+			{block:RebloggedFrom} 
+			<div class="title-quote">
+			<h2><a href="{Permalink}">"{Quote}"</a></h2>
+			{block:Source}
+				<h4 class="text-source">{Source}</h4>
+			{/block:Source}
+			</div>
+			<div class="card-block">
+				<div class="metafooter">
+					<div class="wrapfooter">
+						<span class="meta-footer-thumb">
+						<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+						</span>
+						<span class="author-meta">
+						<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+						<span class="post-date">{DayOfMonth} de {Month} de {Year}</span><span class="dot"></span>
+						</span>
+						<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		{/block:Quote}
+		<!-- end post -->
+		<!-- begin post -->
+		{block:Photo}
+	<div class="card-time-line">
+		<div class="card">
+			{block:RebloggedFrom} 
+			<div class="reblogado">
+			<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3.75 17L8 12.75V16h10v-4.5l2-2V16a2 2 0 0 1-2 2H8v3.25L3.75 17m16.5-10L16 11.25V8H6v4.5l-2 2V8a2 2 0 0 1 2-2h10V2.75L20.25 7z" fill="#626262"/></svg> Post reblogado de <a href="{ReblogParentURL}">{ReblogParentName}</a></p>
+			</div>
+			{block:RebloggedFrom} 
+			<a href="{Permalink}">
+				<img class="img-fluid" src="{PhotoURL-500}" alt="{PhotoAlt}">
+			</a>
+			<div class="card-block">
+				{block:Caption}
+				<h4 class="card-text">{Caption}</h4>
+				{/block:Caption}
+				<div class="metafooter">
+					<div class="wrapfooter">
+						<span class="meta-footer-thumb">
+						<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+						</span>
+						<span class="author-meta">
+						<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+						<span class="post-date">{DayOfMonth} de {Month} de {Year}</span>
+						</span>
+						<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		{/block:Photo}
+		<!-- end post -->
+		<!-- begin post -->
+		{block:Video}
+	<div class="card-time-line">
+		<div class="card">
+			{block:RebloggedFrom} 
+			<div class="reblogado">
+			<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3.75 17L8 12.75V16h10v-4.5l2-2V16a2 2 0 0 1-2 2H8v3.25L3.75 17m16.5-10L16 11.25V8H6v4.5l-2 2V8a2 2 0 0 1 2-2h10V2.75L20.25 7z" fill="#626262"/></svg> Post reblogado de <a href="{ReblogParentURL}">{ReblogParentName}</a></p>
+			</div>
+			{block:RebloggedFrom} 
+			<div class="card-video">
+			{Video-500}
+			</div>
+			<div class="card-block">
+				{block:Caption}
+				<h4 class="card-text">{Caption}</h4>
+				{/block:Caption}
+				<div class="metafooter">
+					<div class="wrapfooter">
+						<span class="meta-footer-thumb">
+						<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+						</span>
+						<span class="author-meta">
+						<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+						<span class="post-date">{DayOfMonth} de {Month} de {Year}</span>
+						</span>
+						<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		{/block:Video}
+		<!-- end post -->
+		<!-- begin post -->
+		{block:Audio}
+	<div class="card-time-line">
+		<div class="card">
+			{block:RebloggedFrom} 
+			<div class="reblogado">
+			<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3.75 17L8 12.75V16h10v-4.5l2-2V16a2 2 0 0 1-2 2H8v3.25L3.75 17m16.5-10L16 11.25V8H6v4.5l-2 2V8a2 2 0 0 1 2-2h10V2.75L20.25 7z" fill="#626262"/></svg> Post reblogado de <a href="{ReblogParentURL}">{ReblogParentName}</a></p>
+			</div>
+			{block:RebloggedFrom} 
+			<div class="card-video">
+			{AudioEmbed}
+			</div>
+			<div class="card-block">
+				{block:Caption}
+				<h4 class="card-text">{Caption}</h4>
+				{/block:Caption}
+				<div class="metafooter">
+					<div class="wrapfooter">
+						<span class="meta-footer-thumb">
+						<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+						</span>
+						<span class="author-meta">
+						<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+						<span class="post-date">{DayOfMonth} de {Month} de {Year}</span>
+						</span>
+						<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		{/block:Audio}
+		<!-- end post -->
+		{block:Chat}
+	<div class="card-time-line">
+		<div class="card">
+			{block:RebloggedFrom} 
+			<div class="reblogado">
+			<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3.75 17L8 12.75V16h10v-4.5l2-2V16a2 2 0 0 1-2 2H8v3.25L3.75 17m16.5-10L16 11.25V8H6v4.5l-2 2V8a2 2 0 0 1 2-2h10V2.75L20.25 7z" fill="#626262"/></svg> Post reblogado de <a href="{ReblogParentURL}">{ReblogParentName}</a></p>
+			</div>
+			{block:RebloggedFrom} 
+                    <li class="chat">
+                        <div class="card-chat">
+                        <ul>
+                            {block:Lines}
+                                <li class="balao-chat {Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}{Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                        </div>
+                    </li>
+            <div class="card-block">
+                        {block:Title}
+                            <h2 class="card-title"><a href="{Permalink}">{Title}</a></h2>
+                        {/block:Title}
+                <div class="metafooter">
+					<div class="wrapfooter">
+						<span class="meta-footer-thumb">
+						<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+						</span>
+						<span class="author-meta">
+						<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+						<span class="post-date">{DayOfMonth} de {Month} de {Year}</span>
+						</span>
+						<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+                {/block:Chat}
+		{/block:Posts}
+	</div>
+	</section>
+	<!-- End List Posts
+	================================================== -->
+	<!-- Begin Featured
+	================================================== -->
+	<section class="featured-posts">
+	<div class="section-title">
+		<h2><span>Artigos da Web{block:TagPage} sobre {Tag}{/block:TagPage}</span></h2>
+	</div>
+	<div class="card-columns listfeaturedtag">
+	{block:Posts}
+	{block:Link}
+		<!-- begin post -->
+		<div class="card">
+			<div class="row">
+				<div class="col-md-5 wrapthumbnail">
+					{block:Thumbnail} 
+					<a href="{URL}">
+						<div class="thumbnail" style="background-image:url({Thumbnail-HighRes});">
+						</div>
+					</a>
+					{/block:Thumbnail} 
+				</div>
+				<div class="col-md-7">
+					<div class="card-block">
+						<h2 class="card-title"><a href="{URL}">{Name}</a></h2>
+						<h4 class="card-text">{Description}</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								{block:Host}
+								<span class="author-meta">
+								<span class="post-name"><a href="{URL}">{Host}</a></span><br/>
+								{/block:Host}
+								<span class="post-date">{DayOfMonth} de {Month} de {Year}</span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end post -->
+	{/block:Link}
+	{/block:Posts}
+	</div>
+	</section>
+	<!-- End Featured
+	================================================== -->
+	<section class="paginacao">
+		{block:Pagination}
+			{block:PreviousPage}
+                <a class="btn paginacao-btn" href="{PreviousPage}">Voltar</a>
+            {/block:PreviousPage}
+            {block:NextPage}
+                <a class="btn paginacao-btn" href="{NextPage}">Mais Posts</a>
+            {/block:NextPage}
+            {/block:Pagination}
+	</section>
+{/block:IndexPage}
+{block:PermalinkPage} 
+	{block:Posts inlineMediaWidth="730"} 
+<!-- Begin Article
+================================================== -->
+<div class="recuo"></div>
+<div class="container {block:IfNavbarVertical}container-vertical{/block:IfNavbarVertical}" id="content">
+	<!-- Toggle button -->
+	{block:IfNavbarVertical}
+	<div id="botao-navbar" class="fixed-top top-vertical">
+  <button id="sidebarCollapse" type="button" class="btn btn-light"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
+  </div>
+  {/block:IfNavbarVertical}
+	<div class="row">
+
+		<!-- Begin Fixed Left Share -->
+		<div class="col-md-2 col-xs-12">
+			<div class="share">
+				<p>
+					Compartilhar
+				</p>
+				<ul>
+					<li>
+					<a target="_blank" href="http://twitter.com/intent/tweet?text={Title}&url={ShortURL}&via=MAMFress">
+					<svg class="svgIcon-use" width="29" height="29" viewbox="0 0 29 29"><path d="M21.967 11.8c.018 5.93-4.607 11.18-11.177 11.18-2.172 0-4.25-.62-6.047-1.76l-.268.422-.038.5.186.013.168.012c.3.02.44.032.6.046 2.06-.026 3.95-.686 5.49-1.86l1.12-.85-1.4-.048c-1.57-.055-2.92-1.08-3.36-2.51l-.48.146-.05.5c.22.03.48.05.75.08.48-.02.87-.07 1.25-.15l2.33-.49-2.32-.49c-1.68-.35-2.91-1.83-2.91-3.55 0-.05 0-.01-.01.03l-.49-.1-.25.44c.63.36 1.35.57 2.07.58l1.7.04L7.4 13c-.978-.662-1.59-1.79-1.618-3.047a4.08 4.08 0 0 1 .524-1.8l-.825.07a12.188 12.188 0 0 0 8.81 4.515l.59.033-.06-.59v-.02c-.05-.43-.06-.63-.06-.87a3.617 3.617 0 0 1 6.27-2.45l.2.21.28-.06c1.01-.22 1.94-.59 2.73-1.09l-.75-.56c-.1.36-.04.89.12 1.36.23.68.58 1.13 1.17.85l-.21-.45-.42-.27c-.52.8-1.17 1.48-1.92 2L22 11l.016.28c.013.2.014.35 0 .52v.04zm.998.038c.018-.22.017-.417 0-.66l-.498.034.284.41a8.183 8.183 0 0 0 2.2-2.267l.97-1.48-1.6.755c.17-.08.3-.02.34.03a.914.914 0 0 1-.13-.292c-.1-.297-.13-.64-.1-.766l.36-1.254-1.1.695c-.69.438-1.51.764-2.41.963l.48.15a4.574 4.574 0 0 0-3.38-1.484 4.616 4.616 0 0 0-4.61 4.613c0 .29.02.51.08.984l.01.02.5-.06.03-.5c-3.17-.18-6.1-1.7-8.08-4.15l-.48-.56-.36.64c-.39.69-.62 1.48-.65 2.28.04 1.61.81 3.04 2.06 3.88l.3-.92c-.55-.02-1.11-.17-1.6-.45l-.59-.34-.14.67c-.02.08-.02.16 0 .24-.01 2.12 1.55 4.01 3.69 4.46l.1-.49-.1-.49c-.33.07-.67.12-1.03.14-.18-.02-.43-.05-.64-.07l-.76-.09.23.73c.57 1.84 2.29 3.14 4.28 3.21l-.28-.89a8.252 8.252 0 0 1-4.85 1.66c-.12-.01-.26-.02-.56-.05l-.17-.01-.18-.01L2.53 21l1.694 1.07a12.233 12.233 0 0 0 6.58 1.917c7.156 0 12.2-5.73 12.18-12.18l-.002.04z"></path></svg>
+					</a>
+					</li>
+					<li>
+					<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={ShortURL}">
+					<svg class="svgIcon-use" width="29" height="29" viewbox="0 0 29 29"><path d="M16.39 23.61v-5.808h1.846a.55.55 0 0 0 .546-.48l.36-2.797a.551.551 0 0 0-.547-.62H16.39V12.67c0-.67.12-.813.828-.813h1.474a.55.55 0 0 0 .55-.55V8.803a.55.55 0 0 0-.477-.545c-.436-.06-1.36-.116-2.22-.116-2.5 0-4.13 1.62-4.13 4.248v1.513H10.56a.551.551 0 0 0-.55.55v2.797c0 .304.248.55.55.55h1.855v5.76c-4.172-.96-7.215-4.7-7.215-9.1 0-5.17 4.17-9.36 9.31-9.36 5.14 0 9.31 4.19 9.31 9.36 0 4.48-3.155 8.27-7.43 9.15M14.51 4C8.76 4 4.1 8.684 4.1 14.46c0 5.162 3.75 9.523 8.778 10.32a.55.55 0 0 0 .637-.543v-6.985a.551.551 0 0 0-.55-.55H11.11v-1.697h1.855a.55.55 0 0 0 .55-.55v-2.063c0-2.02 1.136-3.148 3.03-3.148.567 0 1.156.027 1.597.06v1.453h-.924c-1.363 0-1.93.675-1.93 1.912v1.78c0 .3.247.55.55.55h2.132l-.218 1.69H15.84c-.305 0-.55.24-.55.55v7.02c0 .33.293.59.623.54 5.135-.7 9.007-5.11 9.007-10.36C24.92 8.68 20.26 4 14.51 4"></path></svg>
+					</a>
+					</li>
+				</ul>
+				<div class="sep">
+				</div>
+				<p>
+					Notas
+				</p>
+				<ul>
+					<li>
+					<a href="{ReblogURL}">
+					{NoteCount}<br/>
+					<svg class="svgIcon-use" width="29" height="29" viewbox="0 0 29 29"><path d="M21.27 20.058c1.89-1.826 2.754-4.17 2.754-6.674C24.024 8.21 19.67 4 14.1 4 8.53 4 4 8.21 4 13.384c0 5.175 4.53 9.385 10.1 9.385 1.007 0 2-.14 2.95-.41.285.25.592.49.918.7 1.306.87 2.716 1.31 4.19 1.31.276-.01.494-.14.6-.36a.625.625 0 0 0-.052-.65c-.61-.84-1.042-1.71-1.282-2.58a5.417 5.417 0 0 1-.154-.75zm-3.85 1.324l-.083-.28-.388.12a9.72 9.72 0 0 1-2.85.424c-4.96 0-8.99-3.706-8.99-8.262 0-4.556 4.03-8.263 8.99-8.263 4.95 0 8.77 3.71 8.77 8.27 0 2.25-.75 4.35-2.5 5.92l-.24.21v.32c0 .07 0 .19.02.37.03.29.1.6.19.92.19.7.49 1.4.89 2.08-.93-.14-1.83-.49-2.67-1.06-.34-.22-.88-.48-1.16-.74z"></path></svg>
+					</a>
+					</li>
+					<li class="reblogar">
+					{LikeButton color="grey" size="30"}
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- End Fixed Left Share -->
+
+		<!-- Begin Post -->
+		<div class="col-md-8 col-md-offset-2 col-xs-12">
+			<div class="mainheading">
+
+				<!-- Begin Top Meta -->
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<a href="author.html"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-96}" alt="{PostAuthorName}"></a>
+					</div>
+					<div class="col-md-10">
+						<a class="link-dark" href="{PostAuthorURL}">{PostAuthorName}</a><a href="https://www.tumblr.com/register/follow/{PostAuthorName}" class="btn follow">Seguir</a>
+						<span class="author-description">{Description}</span>
+						<span class="post-date">{DayOfMonth} de {Month} de {Year}</span><span class="dot"></span>
+					</div>
+				</div>
+			{block:Video}
+			<div class="cine-mod">
+				{Video-500}
+			</div>
+			{/block:Video}
+			{block:Audio}
+			<div class="cine-mod">
+				{AudioEmbed}
+			</div>
+			{/block:Audio}
+				<!-- End Top Menta -->
+				{block:PostSummary}
+				<h1 class="posttitle">{PostSummary}</h1>
+				{/block:PostSummary}
+			</div>
+
+			<!-- Begin Featured Image -->
+			<img class="featured-image img-fluid" src="{PhotoURL-500}" alt="{PhotoAlt}">
+			<!-- End Featured Image -->
+
+			<!-- Begin Post Content -->
+			<div class="article-post">
+				{block:Photo}
+				{Caption}
+				{/block:Photo}
+				{block:Video}
+				{block:Caption}
+				<p>{Caption}</p>
+				{/block:Caption}
+				{/block:Video}
+				{block:Audio}
+				{block:Caption}
+				<p>{Caption}</p>
+				{/block:Caption}
+				{/block:Audio}
+				{block:Chat}
+				<li class="chat">
+                        <div class="card-chat">
+                        <ul>
+                            {block:Lines}
+                                <li class="balao-chat {Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}{Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                        </div>
+                </li>
+				{/block:Chat}
+				{Body}
+				{block:Quote}
+				<div class="title-quote quote-page">
+				<h2><a href="{Permalink}">"{Quote}"</a></h2>
+				{block:Source}
+					<h4 class="text-source">{Source}</h4>
+				{/block:Source}
+				</div>
+				{/block:Quote}
+			</div>
+			<!-- End Post Content -->
+
+			<!-- Begin Tags -->
+			<div class="after-post-tags">
+				 {block:HasTags}
+                    <ul class="tags">
+                        {block:Tags}
+                            <li>
+                                <a href="{TagURL}">#{Tag}</a>
+                            </li>
+                        {/block:Tags}
+                    </ul>
+                {/block:HasTags}
+			</div>
+			<!-- End Tags -->
+		<div id="comments">
+			{PostNotes}
+		</div>
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+<div class="hideshare"></div>
+<!-- End Article
+================================================== -->
+	{/block:Posts}
+{block:IfPostsRelacionados}
+<!-- Begin Related
+================================================== -->
+<div class="graybg">
+	<div class="container {block:IfNavbarVertical}container-vertical{/block:IfNavbarVertical}" id="content">
+		<div class="row listrecent listrelated">
+			 {block:RelatedPosts}
+			 {block:Posts}
+			<!-- begin post -->
+			{block:Text}
+			<div class="col-md-4">
+				<div class="card related-card">
+					<div class="card-block">
+						{block:Title}
+						<h2 class="card-title"><a href="{Permalink}">{Title}</a></h2>
+						{/block:Title}
+						<h4 class="card-text">{Body}</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+								<span class="post-date">{DayOfMonth} de {Month} de {Year}</span><span class="dot"></span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/block:Text}
+			<!-- end post -->
+			<!-- begin post -->
+			{block:Quote}
+			<div class="col-md-4">
+				<div class="card related-card">
+					<div class="title-quote">
+					<h2><a href="{Permalink}">"{Quote}"</a></h2>
+					{block:Source}
+						<h4 class="text-source">{Source}</h4>
+					{/block:Source}
+					</div>
+					<div class="card-block">
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+								<span class="post-date">{DayOfMonth} de {Month} de {Year}</span><span class="dot"></span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/block:Quote}
+			<!-- end post -->
+			<!-- begin post -->
+			{block:Photo}
+			<div class="col-md-4">
+				<div class="card related-card">
+					<a href="{Permalink}">
+						<img class="img-fluid" src="{PhotoURL-500}" alt="{PhotoAlt}">
+					</a>
+					<div class="card-block">
+						{block:Caption}
+						<h4 class="card-text">{Caption}</h4>
+						{/block:Caption}
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+								<span class="post-date">{DayOfMonth} de {Month} de {Year}</span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/block:Photo}
+			<!-- end post -->
+			<!-- begin post -->
+			{block:Video}
+			<div class="col-md-4">
+				<div class="card related-card">
+					<div class="card-video">
+					{Video-400}
+					</div>
+					<div class="card-block">
+						{block:Caption}
+						<h4 class="card-text">{Caption}</h4>
+						{/block:Caption}
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+								<span class="post-date">{DayOfMonth} de {Month} de {Year}</span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/block:Video}
+			<!-- end post -->
+			<!-- begin post -->
+			{block:Audio}
+			<div class="col-md-4">
+				<div class="card related-card">
+					<div class="card-video">
+					{AudioEmbed}
+					</div>
+					<div class="card-block">
+						{block:Caption}
+						<h4 class="card-text">{Caption}</h4>
+						{/block:Caption}
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="{PostAuthorURL}"><img class="author-thumb {select:Forma do Avatar}" src="{PostAuthorPortraitURL-64}" alt="{PostAuthorName}"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="{PostAuthorURL}">{PostAuthorName}</a></span><br/>
+								<span class="post-date">{DayOfMonth} de {Month} de {Year}</span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story">{LikeButton color="grey" size="20"}</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/block:Audio}
+			<!-- end post -->
+			{block:Posts}
+			{/block:RelatedPosts}
+		</div>
+	</div>
+</div>
+<!-- End Related Posts
+================================================== -->
+{/block:IfPostsRelacionados}
+<!-- Begin AlertBar
+================================================== -->
+<!-- <div class="alertbar" id="closealertbar" onclick="document.getElementById('closealertbar').style.display='none';">
+	<div class="container text-center">
+		<img src="{image:Logo}" alt=""> &nbsp; Esse pop-up serve apenas para te  <b>atrapalhar</b>. <a href="#" class="btn subscribe">Deu certo?</a>
+	</div>
+</div>-->
+<!-- End AlertBar
+================================================== -->
+{/block:PermalinkPage}
+</div>
+<!-- /.container -->
+	<!-- Begin Footer
+	================================================== -->
+	<!-- Footer -->
+<footer class="page-footer font-small mdb-color darken-3 pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container" id="content">
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center">
+
+        <!--Grid column-->
+        <div class="col-md-6">
+
+          <!-- Image -->
+          <div class="selo-footer">
+            <img src="{image:Logo Footer}">
+         </div>
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Copyright &copy; {CopyrightYears} {Title}.
+      Desenvolvido por <a target="_blank" href="https://www.mamf.com.br">Matheus Araújo</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+	
+	<!-- End Footer
+	================================================== -->
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap JS -->
+</script>
+<script type="text/javascript">
+	$(function(){
+  var topOfOthDiv = $(".hideshare").offset().top;
+  $(window).scroll(function() {
+      if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
+          $(".share").hide(); //reached the desired point -- show div
+      }
+      else{
+        $(".share").show();
+      }
+  });
+});
+</script>
+{block:IfNavbarVertical}
+<script type="text/javascript">
+	$(function() {
+  // Sidebar toggle behavior
+  $('#sidebarCollapse').on('click', function() {
+    $('#sidebar, #content, #botao-navbar').toggleClass('active');
+  });
+});
+</script>
+{/block:IfNavbarVertical}
+<script type="text/javascript">
+	(function () {
+  'use strict'
+
+  if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+      document.createTextNode(
+        '@-ms-viewport{width:auto!important}'
+      )
+    )
+    document.head.appendChild(msViewportStyle)
+  }
+
+}())
+</script>
+</body>
+</html>
